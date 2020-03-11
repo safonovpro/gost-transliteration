@@ -2,10 +2,9 @@
   "name": "gost-transliteration",
   "version": "0.0.1",
   "description": "Transliteration according to GOST",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "npx webpack --mode=development -w",
-    "pro": "npx webpack --mode=production",
+    "dist": "npx webpack --mode=production",
     "test": "jest"
   },
   "repository": {
