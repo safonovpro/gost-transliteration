@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx webpack --mode=development -w",
     "pro": "npx webpack --mode=production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,13 @@
   },
   "homepage": "https://github.com/safonovpro/gost-transliteration#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.4",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
