@@ -205,7 +205,7 @@ const map: TMap = {
       'bg': { symbols: ['t'] },
       'mk': { symbols: ['t'] },
     },
-    'у': {
+    'У': {
       'ru': { symbols: ['u'] },
       'be': { symbols: ['u'] },
       'uk': { symbols: ['u'] },
