@@ -2,8 +2,9 @@
   "name": "gost-transliteration",
   "version": "0.0.1",
   "description": "Transliteration according to GOST",
-  "main": "js/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "npx webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/safonovpro/gost-transliteration/issues"
   },
-  "homepage": "https://github.com/safonovpro/gost-transliteration#readme"
+  "homepage": "https://github.com/safonovpro/gost-transliteration#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
