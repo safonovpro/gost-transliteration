@@ -7,7 +7,7 @@ export type TMap = {
     [symbol: string]: {
       [lang: string]: {
         symbols: Array<string>,
-        getSymbol?: (input: string) => string
+        getSymbolIndex?: (nextLetter: string) => number
       }
     }
   }

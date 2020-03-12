@@ -1,4 +1,4 @@
-import { TGost, TLang, TMap } from './types'
+import { TGost, TLang } from './types'
 import maps from './maps'
 
 const isInUpperCase = (value: string): boolean => (value === value.toLocaleUpperCase()) ? true : false
@@ -9,17 +9,21 @@ export function transilt(input: string, lang: TLang = 'ru', gost: TGost = '7.79-
   let countOfLetterInUpperCase: number = 0
   let result: string
   
-  result = inputArray.map((letter: string): string => {
+  result = inputArray.map((letter: string, index: number): string => {
     if (!maps[gost][letter.toUpperCase()]) return letter
     if (maps[gost][letter.toUpperCase()][lang].symbols.length === 0) return ''
 
-    const letterAfterTranslit: string = maps[gost][letter.toUpperCase()][lang].symbols[0]
-    let result: string = letterAfterTranslit
+    const letterObj = maps[gost][letter.toUpperCase()][lang]
+    let result: string = letterObj.symbols[0]
 
     countOfLetter += 1
 
-    if(isInUpperCase(letter)) {
-      result = letterAfterTranslit.split('').map((letter, i) => (i === 0) ? letter.toLocaleUpperCase() : letter).join('')
+    if (letterObj.symbols.length > 1 && letterObj.getSymbolIndex) {
+      result = letterObj.symbols[letterObj.getSymbolIndex(input[index + 1])]
+    }
+
+    if (isInUpperCase(letter)) {
+      result = result.split('').map((letter, i) => (i === 0) ? letter.toLocaleUpperCase() : letter).join('')
       countOfLetterInUpperCase += 1
     }
     

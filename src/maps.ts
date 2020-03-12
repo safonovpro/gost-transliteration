@@ -234,7 +234,10 @@ const map: TMap = {
       'mk': { symbols: ['x'] },
     },
     'Ц': {
-      'ru': { symbols: ['cz', 'c'] },
+      'ru': {
+        symbols: ['cz', 'c'],
+        getSymbolIndex: (nextLetter: string): number => nextLetter && ['И', 'I', 'Е', 'Э', 'Ё', 'Ы', 'Ю', 'Я', 'Ѣ', 'Ѵ'].includes(nextLetter.toLocaleUpperCase()) ? 1 : 0,
+      },
       'be': { symbols: ['cz', 'c'] },
       'uk': { symbols: ['cz', 'c'] },
       'bg': { symbols: ['cz', 'c'] },
