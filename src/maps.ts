@@ -317,13 +317,13 @@ const map: TMap = {
       'bg': { symbols: ['ya'] },
       'mk': { symbols: [] },
     },
-    '\'': {
-      'ru': { symbols: ['\''] },
-      'be': { symbols: ['\''] },
-      'uk': { symbols: ['\''] },
-      'bg': { symbols: ['\''] },
-      'mk': { symbols: ['\''] },
-    },
+    // '\'': {
+    //   'ru': { symbols: ['\''] },
+    //   'be': { symbols: ['\''] },
+    //   'uk': { symbols: ['\''] },
+    //   'bg': { symbols: ['\''] },
+    //   'mk': { symbols: ['\''] },
+    // },
     'Ѣ': {
       'ru': { symbols: ['ye'] },
       'be': { symbols: [] },
