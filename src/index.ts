@@ -10,10 +10,10 @@ export function transilt(input: string, lang: TLang = 'ru', gost: TGost = '7.79-
   let result: string
   
   result = inputArray.map((letter: string, index: number): string => {
-    if (!maps[gost][letter.toUpperCase()]) return letter
-    if (maps[gost][letter.toUpperCase()][lang].symbols.length === 0) return ''
+    if (!maps[gost][letter.toLocaleUpperCase()]) return letter
+    if (maps[gost][letter.toLocaleUpperCase()][lang].symbols.length === 0) return ''
 
-    const letterObj = maps[gost][letter.toUpperCase()][lang]
+    const letterObj = maps[gost][letter.toLocaleUpperCase()][lang]
     let result: string = letterObj.symbols[0]
 
     countOfLetter += 1
