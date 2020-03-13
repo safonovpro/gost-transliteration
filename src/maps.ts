@@ -1,5 +1,11 @@
 import { TMap } from './types'
 
+const getSymbolIndexFunc = (symbols: Array<string>) => {
+  return (nextLetter: string): number => {
+    return nextLetter && symbols.includes(nextLetter.toLocaleUpperCase()) ? 1 : 0
+  }
+} 
+
 const map: TMap = {
   '7.79-2000': {
     'А': {
@@ -108,10 +114,16 @@ const map: TMap = {
       'mk': { symbols: ['j'] },
     },
     'I': {
-      'ru': { symbols: ['i','i\''] },
+      'ru': {
+        symbols: ['i','i\''],
+        getSymbolIndex: getSymbolIndexFunc(['Б', 'В', 'Г', 'Д', 'Ж', 'З', 'Й', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ѳ']),
+      },
       'be': { symbols: ['i'] },
       'uk': { symbols: ['i'] },
-      'bg': { symbols: ['i','i\''] },
+      'bg': {
+        symbols: ['i','i\''],
+        getSymbolIndex: getSymbolIndexFunc(['Б', 'В', 'Г', 'Д', 'Ж', 'З', 'Й', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ѳ']),
+      },
       'mk': { symbols: [] },
     },
     'Ї': {
@@ -236,7 +248,7 @@ const map: TMap = {
     'Ц': {
       'ru': {
         symbols: ['cz', 'c'],
-        getSymbolIndex: (nextLetter: string): number => nextLetter && ['И', 'I', 'Е', 'Э', 'Ё', 'Ы', 'Ю', 'Я', 'Ѣ', 'Ѵ'].includes(nextLetter.toLocaleUpperCase()) ? 1 : 0,
+        getSymbolIndex: getSymbolIndexFunc(['И', 'I', 'Е', 'Э', 'Ё', 'Ы', 'Ю', 'Я', 'Ѣ', 'Ѵ'])
       },
       'be': { symbols: ['cz', 'c'] },
       'uk': { symbols: ['cz', 'c'] },
