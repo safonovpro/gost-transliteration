@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var maps_1 = __importDefault(require("./maps"));
 var isInUpperCase = function (value) { return (value === value.toLocaleUpperCase()) ? true : false; };
-function transilt(input, lang, gost) {
+function translit(input, lang, gost) {
     if (lang === void 0) { lang = 'ru'; }
     if (gost === void 0) { gost = '7.79-2000'; }
     var inputArray = input.split('');
@@ -31,7 +31,7 @@ function transilt(input, lang, gost) {
     }).join('');
     return (countOfLetter === countOfLetterInUpperCase) ? result.toLocaleUpperCase() : result;
 }
-exports.transilt = transilt;
+exports.translit = translit;
 function retranslit(input, lang, gost) {
     if (lang === void 0) { lang = 'ru'; }
     if (gost === void 0) { gost = '7.79-2000'; }

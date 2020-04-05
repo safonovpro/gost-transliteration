@@ -13,17 +13,17 @@
 Подкючаем и используем функцию модуля:
 
 ```js
-import { transilt } from 'gost-transliteration'
+import { translit } from 'gost-transliteration'
 
-transilt('Тест!') // Вернёт «Test!»
+translit('Тест!') // Вернёт «Test!»
 ```
 
 или с помощью CommonJS модулей:
 
 ```js
-const translit = require('gost-transliteration').transilt
+const translit = require('gost-transliteration').translit
 
-transilt('Тест!') // Вернёт «Test!»
+translit('Тест!') // Вернёт «Test!»
 ```
 
 ## Транслитерация по ГОСТ 7.79-2000 (ISO 9-95)
