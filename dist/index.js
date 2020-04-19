@@ -31,4 +31,4 @@ function translit(input, lang, gost) {
     }).join('');
     return (countOfLetter === countOfLetterInUpperCase) ? result.toLocaleUpperCase() : result;
 }
-exports.default = translit;
+exports.translit = translit;

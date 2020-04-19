@@ -13,7 +13,7 @@
 Подключаем и используем функцию модуля:
 
 ```js
-import translit from 'gost-transliteration'
+import { translit } from 'gost-transliteration'
 
 translit('Привет мир!') // Вернёт «Privet mir!», для русского (язык по умолчанию)
 translit("Прывітанне свет!", 'be') // Вернёт «Pry'vіtanne svet!», для белорусского
@@ -25,7 +25,7 @@ translit("Здраво светот!", 'mk') // Вернёт «Zdravo svetot!»,
 Можно подключить с помощью CommonJS модулей (node.js):
 
 ```js
-const translit = require('gost-transliteration')
+const { translit } = require('gost-transliteration')
 ```
 
 ## Транслитерация по ГОСТ 7.79-2000 (ISO 9-95)
