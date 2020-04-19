@@ -299,7 +299,7 @@ const map: TMap = {
       "ru": { symbols: ["shh"] },
       "be": { symbols: [] },
       "uk": { symbols: ["shh"] },
-      "bg": { symbols: ["shh"] },
+      "bg": { symbols: ["sth"] },
       "mk": { symbols: [] },
     },
     "Ъ": {
