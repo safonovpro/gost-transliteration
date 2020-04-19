@@ -51,3 +51,16 @@ test('Транслитерация болгарского языка (хитро
   expect(translit("IАiбIВiгIЃiдIЕiёIЄiжIЗiѕIИiйIЈiiIЇiкIЌiлIЉiмIНiњIОiпIРiсIТiуIЎiфIХiцIЧiџIШiщIЪiыIЬiэIЮiяI'IѢiѳIѴiѫI", 'bg')).toBe("IAi'bI'Vi'gIi'dIEiIi'zhI'ZiIIi'jIiiIi'kIi'lIi'mI'NiIOi'pI'Ri'sI'TiuIi'fI'Xi'cI'ChiI'Shi'sthIA'iI'iIYuiyaI'IYei'fhIYhio'I")
   expect(translit("ЦИцiЦЕцэЦЁцыЦЮцяЦѢцѵЦАцбЦВцгЦЃц'ЦДц", 'bg')).toBe("CIci'CEczCzczCYucyaCYecyhCzAczbCzVczgCzcz'CzDcz")
 })
+
+// Македонский язык
+
+test('Транслитерация македонского языка (стандартное поведение букв)', () => {
+  expect(translit("АБВГЃДЕЁЄЖЗЅИЙЈIЇКЌЛЉМНЊОПРСТУЎФХЦЧЏШЩЪЫЬЭЮЯ'ѢѲѴѪ", 'mk')).toBe("ABVGG'DEZHZZ'IJJKK'LL'MNN'OPRSTUFXCZCHDHSH'")
+  expect(translit("абвгѓдеёєжзѕийјiїкќлљмнњопрстуўфхцчџшщъыьэюя'ѣѳѵѫ", 'mk')).toBe("abvgg'dezhzz'ijjkk'll'mnn'oprstufxczchdhsh'")
+  expect(translit("АбВгЃдЕёЄжЗѕИйЈiЇкЌлЉмНњОпРсТуЎфХцЧџШщЪыЬэЮя'ѢѳѴѫ", 'mk')).toBe("AbVgG'dEzhZz'IjJkK'lL'mNn'OpRsTufXczChdhSh'")
+})
+
+test('Транслитерация македонского языка (хитрости с I И Ц)', () => {
+  expect(translit("IАiбIВiгIЃiдIЕiёIЄiжIЗiѕIИiйIЈiiIЇiкIЌiлIЉiмIНiњIОiпIРiсIТiуIЎiфIХiцIЧiџIШiщIЪiыIЬiэIЮiяI'IѢiѳIѴiѫI", 'mk')).toBe("AbVgG'dEzhZz'IjJkK'lL'mNn'OpRsTufXczChdhSh'")
+  expect(translit("ЦИцiЦЕцэЦЁцыЦЮцяЦѢцѵЦАцбЦВцгЦЃц'ЦДц", 'mk')).toBe("CIczCEczCzczCzczCzczCzAczbCzVczgCzG'cz'CzDcz")
+})
