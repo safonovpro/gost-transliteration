@@ -25,3 +25,16 @@ test('Транслитерация беларусского языка (хитр
   expect(translit("IАiбIВiгIЃiдIЕiёIЄiжIЗiѕIИiйIЈiiIЇiкIЌiлIЉiмIНiњIОiпIРiсIТiуIЎiфIХiцIЧiџIШiщIЪiыIЬiэIЮiяI'IѢiѳIѴiѫI", 'be')).toBe("IAibIVigIidIEiyoIizhIZiIijIiiIikIilIimINiIOipIRisITiuIU'ifIXicIChiIShiIiy'I'ie'IYuiyaI'IiIiI")
   expect(translit("ЦИцiЦЕцэЦЁцыЦЮцяЦѢцѵЦАцбЦВцгЦЃц'ЦДц", 'be')).toBe("CzciCEce'CYocy'CYucyaCzczCzAczbCzVczgCzcz'CzDcz")
 })
+
+// Украинский язык
+
+test('Транслитерация украинского языка (стандартное поведение букв)', () => {
+  expect(translit("АБВГЃДЕЁЄЖЗЅИЙЈIЇКЌЛЉМНЊОПРСТУЎФХЦЧЏШЩЪЫЬЭЮЯ'ѢѲѴѪ", 'uk')).toBe("ABVGDEYEZHZY'JIYIKLMNOPRSTUFXCZCHSHSHH'YUYA'")
+  expect(translit("абвгѓдеёєжзѕийјiїкќлљмнњопрстуўфхцчџшщъыьэюя'ѣѳѵѫ", 'uk')).toBe("abvgdeyezhzy'jiyiklmnoprstufxczchshshh'yuya'")
+  expect(translit("АбВгЃдЕёЄжЗѕИйЈiЇкЌлЉмНњОпРсТуЎфХцЧџШщЪыЬэЮя'ѢѳѴѫ", 'uk')).toBe("AbVgdEYezhZY'jiYiklmNOpRsTufXczChShshh'Yuya'")
+})
+
+test('Транслитерация беларусского языка (хитрости с Ц)', () => {
+  expect(translit("IАiбIВiгIЃiдIЕiёIЄiжIЗiѕIИiйIЈiiIЇiкIЌiлIЉiмIНiњIОiпIРiсIТiуIЎiфIХiцIЧiџIШiщIЪiыIЬiэIЮiяI'IѢiѳIѴiѫI", 'uk')).toBe("IAibIVigIidIEiIYeizhIZiIY'ijIiiIYiikIilIimINiIOipIRisITiuIifIXicIChiIShishhIiI'iIYuiyaI'IiIiI")
+  expect(translit("ЦИцiЦЕцэЦЁцыЦЮцяЦѢцѵЦАцбЦВцгЦЃц'ЦДц", 'uk')).toBe("CY'ciCEczCzczCYucyaCzczCzAczbCzVczgCzcz'CzDcz")
+})
