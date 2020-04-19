@@ -1,4 +1,4 @@
-import { translit, retranslit } from '../src/index'
+import translit from '../src/index'
 
 // Русский язык
 

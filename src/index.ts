@@ -3,7 +3,7 @@ import maps from './maps'
 
 const isInUpperCase = (value: string): boolean => (value === value.toLocaleUpperCase()) ? true : false
 
-export function translit(input: string, lang: TLang = 'ru', gost: TGost = '7.79-2000'): string {
+function translit(input: string, lang: TLang = 'ru', gost: TGost = '7.79-2000'): string {
   const inputArray: Array<string> = input.split('')
   let countOfLetter: number = 0
   let countOfLetterInUpperCase: number = 0
@@ -33,6 +33,4 @@ export function translit(input: string, lang: TLang = 'ru', gost: TGost = '7.79-
   return (countOfLetter === countOfLetterInUpperCase) ? result.toLocaleUpperCase() : result
 }
 
-export function retranslit(input: string, lang: TLang = 'ru', gost: TGost = '7.79-2000'): string {
-  return input
-}
+export default translit
