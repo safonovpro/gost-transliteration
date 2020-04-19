@@ -120,7 +120,7 @@ var map = {
             "be": { symbols: ["i"] },
             "uk": { symbols: ["i"] },
             "bg": {
-                symbols: ["i", "i\""],
+                symbols: ["i", "i'"],
                 getSymbolIndex: getSymbolIndexFunc(["Б", "В", "Г", "Д", "Ж", "З", "Й", "К", "Л", "М", "Н", "П", "Р", "С", "Т", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ѳ"]),
             },
             "mk": { symbols: [] },
@@ -249,10 +249,22 @@ var map = {
                 symbols: ["cz", "c"],
                 getSymbolIndex: getSymbolIndexFunc(["И", "I", "Е", "Э", "Ё", "Ы", "Ю", "Я", "Ѣ", "Ѵ"])
             },
-            "be": { symbols: ["cz", "c"] },
-            "uk": { symbols: ["cz", "c"] },
-            "bg": { symbols: ["cz", "c"] },
-            "mk": { symbols: ["cz", "c"] },
+            "be": {
+                symbols: ["cz", "c"],
+                getSymbolIndex: getSymbolIndexFunc(["I", "Е", "Э", "Ё", "Ы", "Ю", "Я"])
+            },
+            "uk": {
+                symbols: ["cz", "c"],
+                getSymbolIndex: getSymbolIndexFunc(["И", "I", "Е", "Ю", "Я"])
+            },
+            "bg": {
+                symbols: ["cz", "c"],
+                getSymbolIndex: getSymbolIndexFunc(["И", "I", "Е", "Ю", "Я", "Ѣ", "Ѵ"])
+            },
+            "mk": {
+                symbols: ["cz", "c"],
+                getSymbolIndex: getSymbolIndexFunc(["И", "Е"])
+            },
         },
         "Ч": {
             "ru": { symbols: ["ch"] },
@@ -286,7 +298,7 @@ var map = {
             "ru": { symbols: ["shh"] },
             "be": { symbols: [] },
             "uk": { symbols: ["shh"] },
-            "bg": { symbols: ["shh"] },
+            "bg": { symbols: ["sth"] },
             "mk": { symbols: [] },
         },
         "Ъ": {

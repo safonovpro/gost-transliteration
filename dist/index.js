@@ -31,10 +31,4 @@ function translit(input, lang, gost) {
     }).join('');
     return (countOfLetter === countOfLetterInUpperCase) ? result.toLocaleUpperCase() : result;
 }
-exports.translit = translit;
-function retranslit(input, lang, gost) {
-    if (lang === void 0) { lang = 'ru'; }
-    if (gost === void 0) { gost = '7.79-2000'; }
-    return input;
-}
-exports.retranslit = retranslit;
+exports.default = translit;
