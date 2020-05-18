@@ -18,8 +18,21 @@ export function translit(input: string, lang: TLang = 'ru', gost: TGost = '7.79-
 
     countOfLetter += 1
 
-    if (letterObj.symbols.length > 1 && letterObj.getSymbolIndex) {
-      result = letterObj.symbols[letterObj.getSymbolIndex(input[index + 1])]
+    if (index !== inputArray.length -1 && letterObj.symbols.length > 1 && letterObj.getSymbolIndex) {
+      for (let i = index + 1; i < inputArray.length; i += 1) {
+        const nextLetter = inputArray[i]
+
+        if (!maps[gost][nextLetter.toLocaleUpperCase()]) break
+        else {
+          const isNextLetterTransliterable = maps[gost][nextLetter.toLocaleUpperCase()][lang].symbols.length !== 0
+
+          if (isNextLetterTransliterable) {
+            result = letterObj.symbols[letterObj.getSymbolIndex(nextLetter)]
+
+            break
+          }
+        }
+      }
     }
 
     if (isInUpperCase(letter)) {
