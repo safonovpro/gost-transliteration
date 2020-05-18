@@ -1,6 +1,6 @@
 {
   "name": "gost-transliteration",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Transliteration according to GOST",
   "main": "dist/index.js",
   "scripts": {
