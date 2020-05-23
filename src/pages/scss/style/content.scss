@@ -1,0 +1,24 @@
+#content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+
+    @for $n from 1 through 5 {
+        h#{$n}, .h#{$n} {
+            margin-top: $headers-margin-size / $n;
+            margin-bottom: $headers-margin-size - ($n - 1) * $headers-delta;
+            font-family: $headers-font-family;
+            font-weight: normal;
+            font-size: $headers-font-size - ($n - 1) * $headers-delta;
+        }
+    }
+
+    textarea {
+        min-height: 150px;
+    }
+
+    .btn {
+        font-weight: 300;
+    }
+}

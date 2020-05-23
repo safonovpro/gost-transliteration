@@ -1,0 +1,31 @@
+$fa-font-path: '../../../node_modules/@fortawesome/fontawesome-free/webfonts';
+
+// Import Bootstrap 4
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+
+// Import Bootstrap 4 - Grid
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/flex";
+@import "~bootstrap/scss/utilities/spacing";
+@import "~bootstrap/scss/utilities/embed";
+@import "~bootstrap/scss/utilities/text";
+@import "~bootstrap/scss/utilities/background";
+
+// Import Bootstrap 4 - other modules
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+
+// Import Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+// Custom styles
+@import "style/variables";
+@import "style/content";
