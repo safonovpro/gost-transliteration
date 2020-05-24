@@ -32,14 +32,27 @@ class App extends Component {
         output: '',
     }
 
-    handlerChangeRule = (rule: string) => {
-        this.setState({ rule })
-        this.handlerChangeInput( this.state.input )
+    handlerChangeRule = (inputRule: string) => {
+        const input: string = this.state.input
+        const lang: TLang = this.state.lang as TLang
+        const rule: TGost = inputRule as TGost
+
+        this.setState({
+            rule,
+            output: translit(input, lang, rule),
+        })
     }
 
-    handlerChangeLang = (lang: string) => {
-        this.setState({ lang })
-        this.handlerChangeInput( this.state.input )
+    handlerChangeLang = (inputLang: string) => {
+        const input: string = this.state.input
+        const lang: TLang = inputLang as TLang
+        const rule: TGost = this.state.rule as TGost
+
+        this.setState({
+            lang,
+            output: translit(input, lang, rule),
+        })
+        
     }
 
     handlerChangeInput = (input: string) => {
@@ -57,7 +70,7 @@ class App extends Component {
             <div id="translit">
                 <div className="row">
                     <div className="col-sm-6">
-                        <Select label="Выбирите правила транслитерации" items={ this.rules } onChange={ this.handlerChangeRule } />
+                        <Select label="Выберите правила транслитерации" items={ this.rules } onChange={ this.handlerChangeRule } />
                     </div>
                     <div className="col-sm-6">
                         <Select label="Выберите язык" items={ this.langs } onChange={ this.handlerChangeLang } />

@@ -60,13 +60,23 @@ var App = /** @class */ (function (_super) {
             input: '',
             output: '',
         };
-        _this.handlerChangeRule = function (rule) {
-            _this.setState({ rule: rule });
-            _this.handlerChangeInput(_this.state.input);
+        _this.handlerChangeRule = function (inputRule) {
+            var input = _this.state.input;
+            var lang = _this.state.lang;
+            var rule = inputRule;
+            _this.setState({
+                rule: rule,
+                output: index_1.translit(input, lang, rule),
+            });
         };
-        _this.handlerChangeLang = function (lang) {
-            _this.setState({ lang: lang });
-            _this.handlerChangeInput(_this.state.input);
+        _this.handlerChangeLang = function (inputLang) {
+            var input = _this.state.input;
+            var lang = inputLang;
+            var rule = _this.state.rule;
+            _this.setState({
+                lang: lang,
+                output: index_1.translit(input, lang, rule),
+            });
         };
         _this.handlerChangeInput = function (input) {
             var lang = _this.state.lang;
@@ -82,7 +92,7 @@ var App = /** @class */ (function (_super) {
         return (react_1.default.createElement("div", { id: "translit" },
             react_1.default.createElement("div", { className: "row" },
                 react_1.default.createElement("div", { className: "col-sm-6" },
-                    react_1.default.createElement(Select_1.default, { label: "\u0412\u044B\u0431\u0438\u0440\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0442\u0440\u0430\u043D\u0441\u043B\u0438\u0442\u0435\u0440\u0430\u0446\u0438\u0438", items: this.rules, onChange: this.handlerChangeRule })),
+                    react_1.default.createElement(Select_1.default, { label: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0442\u0440\u0430\u043D\u0441\u043B\u0438\u0442\u0435\u0440\u0430\u0446\u0438\u0438", items: this.rules, onChange: this.handlerChangeRule })),
                 react_1.default.createElement("div", { className: "col-sm-6" },
                     react_1.default.createElement(Select_1.default, { label: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u044F\u0437\u044B\u043A", items: this.langs, onChange: this.handlerChangeLang }))),
             react_1.default.createElement("div", { className: "row" },
